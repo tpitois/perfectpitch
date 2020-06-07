@@ -1,0 +1,15 @@
+<StackLayout id='layout-main'>
+    <StackLayout id='layout-header'>
+        <Label text='' id='Label' class=''/>
+        <Button text='Listen note' tap='generate'/>
+    </StackLayout>
+    <StackLayout id='layout-button'>
+        <Button text='A' tap='onTap'/>
+        <Button text='B' tap='onTap'/>
+        <Button text='C' tap='onTap'/>
+        <Button text='D' tap='onTap'/>
+        <Button text='E' tap='onTap'/>
+        <Button text='F' tap='onTap'/>
+        <Button text='G' tap='onTap'/>
+    </StackLayout>
+</StackLayout>

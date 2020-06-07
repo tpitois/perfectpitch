@@ -1,0 +1,28 @@
+#layout-main {
+    background-color: antiquewhite;
+    padding: 100px;
+}
+#layout-header {
+    background-color: antiquewhite;
+    margin-top: 0%;
+}
+#layout-button {
+    background-color: red;
+    height: 1015px;
+}
+button {
+    background-color: green;
+    margin: 10px;
+    height: 125px;
+    border-radius: 12px;
+}
+label {
+    text-align: center;
+    font-size: 20px;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
