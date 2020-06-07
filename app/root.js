@@ -33,6 +33,8 @@ exports.onTap = function(arg) {
     if (number == note_number) {
         lbl.text = 'Perfect ! It was a '+number_to_note[number]+'.';
         lbl.className = 'green';
+    } else if (note_number == null) {
+        lbl.text = 'Please generate a note'
     } else {
         lbl.className = 'red';
         if (number > note_number) {
@@ -41,5 +43,8 @@ exports.onTap = function(arg) {
             lbl.text = 'Too low';
         }
     }
+    player.playFromUrl({
+        audioFile: 'https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/'+number_to_note[number].toLowerCase()+'.mp3',
+        loop: false});
 }
 

@@ -2,17 +2,17 @@
     <StackLayout id='layout-header'>
         <Label text='' id='label' class=''/>
         <AbsoluteLayout>
-            <Button text='Generate note' tap='generate' id='generate'/>
+            <Button text='Generate a note' tap='generate' id='generate'/>
             <Button text='' tap='listen' id='listen'/>
         </AbsoluteLayout>
     </StackLayout>
     <StackLayout id='layout-button'>
-        <Button text='A' tap='onTap'/>
-        <Button text='B' tap='onTap'/>
-        <Button text='C' tap='onTap'/>
-        <Button text='D' tap='onTap'/>
-        <Button text='E' tap='onTap'/>
-        <Button text='F' tap='onTap'/>
-        <Button text='G' tap='onTap'/>
+        <Button text='A' tap='onTap' class='note_button'/>
+        <Button text='B' tap='onTap' class='note_button'/>
+        <Button text='C' tap='onTap' class='note_button'/>
+        <Button text='D' tap='onTap' class='note_button'/>
+        <Button text='E' tap='onTap' class='note_button'/>
+        <Button text='F' tap='onTap' class='note_button'/>
+        <Button text='G' tap='onTap' class='note_button'/>
     </StackLayout>
 </StackLayout>

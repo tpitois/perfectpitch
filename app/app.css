@@ -1,37 +1,43 @@
 #layout-main {
     background-color: #faebd7;
-    padding: 100px;
+    padding: 30%;
 }
 #layout-header {
-    margin-top: 500px;
-    margin-bottom: 125px;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
 #layout-button {
-    height: 1015px;
+    height: 50%;
 }
 button {
     background-color: #008b8b;
-    margin: 10px;
-    height: 125px;
+    border-radius: 12px;
+    padding: 0;
+}
+.note_button {
+    background-color: #008b8b;
+    margin: 1%;
+    height: 12%;
     width: 100%;
     border-radius: 12px;
 }
 #generate {
     margin-left: 5%;
+    height: 10%;
     width: 65%;
     background-color: #b8860b;
-    right: 0;
 }
 #listen{
     width: 20%;
+    height: 10%;
     margin-left: 75%;
     font-family: 'fontello';
-    font-size: 25px;
+    font-size: 25%;
 }
 label {
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 50px;
+    font-size: 20%;
+    margin-bottom: 2%;
 }
 .green {
     color: green;
