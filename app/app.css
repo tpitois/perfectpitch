@@ -3,22 +3,35 @@
     padding: 100px;
 }
 #layout-header {
-    background-color: antiquewhite;
-    margin-top: 0%;
+    margin-top: 500px;
+    margin-bottom: 125px;
 }
 #layout-button {
-    background-color: red;
     height: 1015px;
 }
 button {
-    background-color: green;
+    background-color: darkcyan;
     margin: 10px;
     height: 125px;
+    width: 100%;
     border-radius: 12px;
+}
+#generate {
+    margin-left: 5%;
+    width: 65%;
+    background-color: darkgoldenrod;
+    right: 0;
+}
+#listen{
+    width: 20%;
+    margin-left: 75%;
+    font-family: 'fontello';
+    font-size: 25px;
 }
 label {
     text-align: center;
     font-size: 20px;
+    margin-bottom: 50px;
 }
 .green {
     color: green;
