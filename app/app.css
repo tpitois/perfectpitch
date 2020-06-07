@@ -1,5 +1,5 @@
 #layout-main {
-    background-color: antiquewhite;
+    background-color: #faebd7;
     padding: 100px;
 }
 #layout-header {
@@ -10,7 +10,7 @@
     height: 1015px;
 }
 button {
-    background-color: darkcyan;
+    background-color: #008b8b;
     margin: 10px;
     height: 125px;
     width: 100%;
@@ -19,7 +19,7 @@ button {
 #generate {
     margin-left: 5%;
     width: 65%;
-    background-color: darkgoldenrod;
+    background-color: #b8860b;
     right: 0;
 }
 #listen{
