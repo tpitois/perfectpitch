@@ -15,7 +15,7 @@
     "@nativescript/theme": "~2.3.3",
     "nativescript-audio": "^5.1.1",
     "nativescript-sound": "^1.0.4",
-    "tns-core-modules": "~6.5.0"
+    "tns-core-modules": "~6.5.4"
   },
   "devDependencies": {
     "nativescript-dev-webpack": "~1.5.1"
