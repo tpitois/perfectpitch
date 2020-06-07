@@ -3,8 +3,8 @@ const getViewById = require("tns-core-modules/ui/core/view").getViewById;
 
 const player = new audio.TNSPlayer();
 
-const number_to_note = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-const note_to_number = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6};
+const number_to_note = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+const note_to_number = {'C': 0, 'D': 1, 'E': 2, 'F': 3, 'G': 4, 'A': 5, 'B': 6};
 
 let note_number = null;
 let number = null;

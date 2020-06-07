@@ -7,12 +7,12 @@
         </AbsoluteLayout>
     </StackLayout>
     <StackLayout id='layout-button'>
-        <Button text='A' tap='onTap' class='note_button'/>
-        <Button text='B' tap='onTap' class='note_button'/>
         <Button text='C' tap='onTap' class='note_button'/>
         <Button text='D' tap='onTap' class='note_button'/>
         <Button text='E' tap='onTap' class='note_button'/>
         <Button text='F' tap='onTap' class='note_button'/>
         <Button text='G' tap='onTap' class='note_button'/>
+        <Button text='A' tap='onTap' class='note_button'/>
+        <Button text='B' tap='onTap' class='note_button'/>
     </StackLayout>
 </StackLayout>
