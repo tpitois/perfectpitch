@@ -34,3 +34,4 @@ typings/
 #Drawable
 
 .drawable/*
+build/config.gypi
