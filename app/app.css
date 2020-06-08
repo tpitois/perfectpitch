@@ -1,4 +1,4 @@
-#layout-main {
+.page {
     background-color: #faebd7;
     padding: 30%;
 }
@@ -10,38 +10,57 @@
     height: 50%;
 }
 button {
-    background-color: #008b8b;
     border-radius: 12px;
     padding: 0;
 }
-.note_button {
-    background-color: #008b8b;
+.note {
     margin: 1%;
     height: 12%;
     width: 100%;
-    border-radius: 12px;
 }
 #generate {
     margin-left: 5%;
     height: 10%;
     width: 65%;
-    background-color: #b8860b;
 }
 #listen{
     width: 20%;
     height: 10%;
     margin-left: 75%;
-    font-family: 'fontello';
     font-size: 25%;
 }
-label {
+#msg_label {
     text-align: center;
     font-size: 20%;
     margin-bottom: 2%;
+    height: 5%;
+}
+.primary {
+    background-color: #008b8b;
+}
+.accent {
+    background-color: #b8860b;
 }
 .green {
     color: green;
 }
 .red {
     color: red;
+}
+.fontello {
+    font-family: "fontello";
+}
+#generate_layout {
+    margin-bottom: 5%;
+}
+#attempts_layout {
+    font-size: 20%;
+}
+#attempts_label {
+    margin-left: 25%;
+    width: 43%;
+    height: 5%;
+}
+#attempts_switch {
+    margin-left: 68%;
 }

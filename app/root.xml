@@ -1,18 +1,29 @@
-<StackLayout id='layout-main'>
-    <StackLayout id='layout-header'>
-        <Label text='' id='label' class=''/>
-        <AbsoluteLayout>
-            <Button text='Generate a note' tap='generate' id='generate'/>
-            <Button text='' tap='listen' id='listen'/>
-        </AbsoluteLayout>
-    </StackLayout>
-    <StackLayout id='layout-button'>
-        <Button text='B' tap='onTap' class='note_button'/>
-        <Button text='A' tap='onTap' class='note_button'/>
-        <Button text='G' tap='onTap' class='note_button'/>
-        <Button text='F' tap='onTap' class='note_button'/>
-        <Button text='E' tap='onTap' class='note_button'/>
-        <Button text='D' tap='onTap' class='note_button'/>
-        <Button text='C' tap='onTap' class='note_button'/>
-    </StackLayout>
-</StackLayout>
+<TabView tabTextFontSize="25%"  androidTabsPosition="bottom" tabBackgroundColor="antiquewhite" selectedTabTextColor="darkgoldenrod">
+    <TabViewItem title="" class="fontello">
+        <StackLayout class="page">
+            <StackLayout id="layout-header">
+                <Label text="" id="msg_label" class=""/>
+                <AbsoluteLayout id="generate_layout">
+                    <Button text="Generate a note" tap="generate" id="generate" class="accent"/>
+                    <Button text="" tap="listen" id="listen" class="primary fontello"/>
+                </AbsoluteLayout>
+                <AbsoluteLayout id="attempts_layout">
+                    <Label text="Count attempts :" id="attempts_label"/>
+                    <Switch checked="false" loaded="onSwitchLoaded" id="attempts_switch" class="accent"/>
+                </AbsoluteLayout>
+            </StackLayout>
+            <StackLayout id="layout-button">
+                <Button text="B" tap="onTap" class="primary note"/>
+                <Button text="A" tap="onTap" class="primary note"/>
+                <Button text="G" tap="onTap" class="primary note"/>
+                <Button text="F" tap="onTap" class="primary note"/>
+                <Button text="E" tap="onTap" class="primary note"/>
+                <Button text="D" tap="onTap" class="primary note"/>
+                <Button text="C" tap="onTap" class="primary note"/>
+            </StackLayout>
+        </StackLayout>
+    </TabViewItem>
+    <TabViewItem title="" class="fontello">
+                <Label text="" id="label" class=""/>
+    </TabViewItem>
+</TabView>
