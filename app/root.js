@@ -1,5 +1,6 @@
 const audio = require("nativescript-audio");
-const applicationSettingsModule = require("tns-core-modules/application-settings")
+const applicationSettingsModule = require("tns-core-modules/application-settings");
+const Observable = require("tns-core-modules/data/observable").Observable;
 
 const player = new audio.TNSPlayer();
 
@@ -14,15 +15,16 @@ attempts = attempts.split(",");
 attempts = attempts.filter(Boolean);
 let attempt = null;
 let count_attempts = false;
+let pageData = new Observable();
 
 exports.a440 = function() {
     player.playFromUrl({
         audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/a0.mp3",
         loop: false});
-}
+};
 
 exports.generate = function(arg) {
-    if (note_number == number) {
+    if (note_number == number || note_number == null) {
         attempt = 0;
         var lbl = arg.object.parent.parent.getViewById("msg_label");
         lbl.text = "";
@@ -35,31 +37,33 @@ exports.generate = function(arg) {
     player.playFromUrl({
         audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[note_number].toLowerCase()+String(octave)+".mp3",
         loop: false});
-}
+};
 
 exports.submit = function(arg) {
-    if (note_number != null && count_attempts == true) {
-        attempt++;
-    }
-    var lbl = arg.object.parent.parent.getViewById("msg_label");
-    if (number == note_number) {
-        lbl.text = "Perfect ! It was a "+number_to_note[number]+".";
-        lbl.className = "green";
-        arg.object.parent.parent.getViewById("generate").text = "Generate a note";
+    if (number != null) {
         if (note_number != null && count_attempts == true) {
-            attempts.push(String(attempt));
-            applicationSettingsModule.setString("attempts", String(attempts));
+            attempt++;
         }
-    } else if (note_number == null) {
-        lbl.text = "Please generate a note."
-    } else {
-        lbl.className = "red";
-        lbl.text = "Not the correct note.";
+        var lbl = arg.object.parent.parent.getViewById("msg_label");
+        if (number == note_number) {
+            lbl.text = "Perfect ! It was a "+number_to_note[number]+".";
+            lbl.className = "green";
+            arg.object.parent.parent.getViewById("generate").text = "Generate a note";
+            if (note_number != null && count_attempts == true) {
+                attempts.push(String(attempt));
+                applicationSettingsModule.setString("attempts", String(attempts));
+            }
+        } else if (note_number == null) {
+            lbl.text = "Please generate a note."
+        } else {
+            lbl.className = "red";
+            lbl.text = "Not the correct note.";
+        }
+        player.playFromUrl({
+            audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[number].toLowerCase()+String(octave)+".mp3",
+            loop: false});
     }
-    player.playFromUrl({
-        audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[number].toLowerCase()+String(octave)+".mp3",
-        loop: false});
-}
+};
 
 exports.select = function(arg) {
     for (var i = 0; i < 7; i++) {
@@ -70,7 +74,7 @@ exports.select = function(arg) {
         }
     }
     number = note_to_number[arg.object.text];
-}
+};
 
 exports.onSwitchLoaded = function(argsloaded) {
     var mySwitch = argsloaded.object;
@@ -79,5 +83,17 @@ exports.onSwitchLoaded = function(argsloaded) {
         var isChecked = sw.checked;
         count_attempts = isChecked;
     });
-}
+};
+
+exports.loadchart = function(args) {
+    pageData.attemptData = [];
+
+    for (var i=0; i < attempts.length; i++) {
+        pageData.attemptData.push({number: String(i+1), count: parseInt(attempts[i])});
+    }
+    console.log(pageData);
+
+    var page = args.object;
+    page.bindingContext = pageData;
+};
 

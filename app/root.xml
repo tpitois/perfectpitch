@@ -25,6 +25,21 @@
         </StackLayout>
     </TabViewItem>
     <TabViewItem title="" class="fontello">
-                <Label text="" id="label" class=""/>
+        <Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:chart="nativescript-ui-chart" class="page" loaded="loadchart" id="pagechart">
+            <StackLayout class="p-20">
+                <chart:RadCartesianChart class="m-t-10" height="200">
+                <chart:RadCartesianChart.series>
+                    <chart:LineSeries items="{{ attemptData }}" categoryProperty="number" valueProperty="count">
+                    <chart:LineSeries.horizontalAxis>
+                        <chart:CategoricalAxis labelFitMode="Rotate" />
+                    </chart:LineSeries.horizontalAxis>
+                    <chart:LineSeries.verticalAxis>
+                        <chart:LinearAxis labelLayoutMode="outer" />
+                    </chart:LineSeries.verticalAxis>
+                    </chart:LineSeries>
+                </chart:RadCartesianChart.series>
+                </chart:RadCartesianChart>
+            </StackLayout>
+        </Page>
     </TabViewItem>
 </TabView>

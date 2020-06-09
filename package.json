@@ -15,6 +15,7 @@
     "@nativescript/theme": "~2.3.3",
     "nativescript-audio": "^5.1.1",
     "nativescript-sound": "^1.0.4",
+    "nativescript-ui-chart": "^7.1.1",
     "tns-core-modules": "~6.5.4"
   },
   "devDependencies": {
