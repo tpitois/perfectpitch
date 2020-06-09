@@ -3,11 +3,11 @@
     padding: 30%;
 }
 #layout-header {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-bottom: 5%;
 }
 #layout-button {
-    height: 50%;
+    height: 55%;
 }
 button {
     border-radius: 12px;
@@ -15,19 +15,19 @@ button {
 }
 .note {
     margin: 1%;
-    height: 12%;
+    height: 10%;
     width: 100%;
+    background-color: gray;
 }
 #generate {
     margin-left: 5%;
     height: 10%;
-    width: 65%;
+    width: 60%;
 }
-#listen{
-    width: 20%;
+#a440{
+    width: 25%;
     height: 10%;
-    margin-left: 75%;
-    font-size: 25%;
+    margin-left: 70%;
 }
 #msg_label {
     text-align: center;
@@ -63,4 +63,9 @@ button {
 }
 #attempts_switch {
     margin-left: 68%;
+}
+#submit {
+    margin-top: 5%;
+    height: 12%;
+    width: 80%;
 }

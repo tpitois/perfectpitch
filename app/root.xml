@@ -5,7 +5,7 @@
                 <Label text="" id="msg_label" class=""/>
                 <AbsoluteLayout id="generate_layout">
                     <Button text="Generate a note" tap="generate" id="generate" class="accent"/>
-                    <Button text="" tap="listen" id="listen" class="primary fontello"/>
+                    <Button text="440 Hz" tap="a440" id="a440" class="primary fontello"/>
                 </AbsoluteLayout>
                 <AbsoluteLayout id="attempts_layout">
                     <Label text="Count attempts :" id="attempts_label"/>
@@ -13,13 +13,14 @@
                 </AbsoluteLayout>
             </StackLayout>
             <StackLayout id="layout-button">
-                <Button text="B" tap="onTap" class="primary note"/>
-                <Button text="A" tap="onTap" class="primary note"/>
-                <Button text="G" tap="onTap" class="primary note"/>
-                <Button text="F" tap="onTap" class="primary note"/>
-                <Button text="E" tap="onTap" class="primary note"/>
-                <Button text="D" tap="onTap" class="primary note"/>
-                <Button text="C" tap="onTap" class="primary note"/>
+                <Button text="B" tap="select" class="note" id="b"/>
+                <Button text="A" tap="select" class="note" id="a"/>
+                <Button text="G" tap="select" class="note" id="g"/>
+                <Button text="F" tap="select" class="note" id="f"/>
+                <Button text="E" tap="select" class="note" id="e"/>
+                <Button text="D" tap="select" class="note" id="d"/>
+                <Button text="C" tap="select" class="note" id="c"/>
+                <Button text="Submit" tap="submit" class="accent" id="submit"/>
             </StackLayout>
         </StackLayout>
     </TabViewItem>

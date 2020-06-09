@@ -15,20 +15,21 @@ attempts = attempts.filter(Boolean);
 let attempt = null;
 let count_attempts = false;
 
-exports.listen = function() {
-    if (note_number != null) {
-        player.playFromUrl({
-            audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[note_number].toLowerCase()+String(octave)+".mp3",
-            loop: false});
-    }
+exports.a440 = function() {
+    player.playFromUrl({
+        audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/a0.mp3",
+        loop: false});
 }
 
 exports.generate = function(arg) {
-    attempt = 0;
-    var lbl = arg.object.parent.parent.getViewById("msg_label");
-    lbl.text = "";
-    note_number = Math.floor((Math.random() * 7));
-    octave = Math.floor((Math.random() * 3)-1);
+    if (note_number == number) {
+        attempt = 0;
+        var lbl = arg.object.parent.parent.getViewById("msg_label");
+        lbl.text = "";
+        arg.object.text = "Listen again"
+        note_number = Math.floor((Math.random() * 7));
+        octave = Math.floor((Math.random() * 3)-1);
+    }
     console.log(number_to_note[note_number]);
     console.log(octave);
     player.playFromUrl({
@@ -36,15 +37,15 @@ exports.generate = function(arg) {
         loop: false});
 }
 
-exports.onTap = function(arg) {
+exports.submit = function(arg) {
     if (note_number != null && count_attempts == true) {
         attempt++;
     }
     var lbl = arg.object.parent.parent.getViewById("msg_label");
-    number = note_to_number[arg.object.text];
     if (number == note_number) {
         lbl.text = "Perfect ! It was a "+number_to_note[number]+".";
         lbl.className = "green";
+        arg.object.parent.parent.getViewById("generate").text = "Generate a note";
         if (note_number != null && count_attempts == true) {
             attempts.push(String(attempt));
             applicationSettingsModule.setString("attempts", String(attempts));
@@ -53,11 +54,22 @@ exports.onTap = function(arg) {
         lbl.text = "Please generate a note."
     } else {
         lbl.className = "red";
-        lbl.text = "Not the correct note."
+        lbl.text = "Not the correct note.";
     }
     player.playFromUrl({
-        audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[number].toLowerCase()+"0.mp3",
+        audioFile: "https://raw.githubusercontent.com/tpitois/perfectpitch/master/sounds/"+number_to_note[number].toLowerCase()+String(octave)+".mp3",
         loop: false});
+}
+
+exports.select = function(arg) {
+    for (var i = 0; i < 7; i++) {
+        if (arg.object.text == number_to_note[i]) {
+            arg.object.className = "note primary";
+        } else {
+            arg.object.parent.getViewById(number_to_note[i].toLowerCase()).className = "note";
+        }
+    }
+    number = note_to_number[arg.object.text];
 }
 
 exports.onSwitchLoaded = function(argsloaded) {
